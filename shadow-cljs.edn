@@ -5,7 +5,18 @@
   "src/test"]
 
  :dependencies
- []
+ [[com.teknql/shadow-cljs-tailwind-jit "0.2.2"]
+  [funcool/rumext  "2021.05.12-1"]]
+
+ :dev-http {8020 "public"}
 
  :builds
- {}}
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+   :modules
+   {:main
+    {:init-fn shad.app/init}}}}
+
+ }
